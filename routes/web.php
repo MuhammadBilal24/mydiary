@@ -13,12 +13,13 @@ use App\Http\Controllers\DashboardController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-// Login
-Route::get('login',[DashboardController::class,'loginpage']);
 
 // Default 
 Route::get('/', function () { return view('login');
 });
+
+// Login
+Route::get('login',[DashboardController::class,'loginpage']);
 
 // Dashboard
 Route::get('dashboard',[DashboardController::class,'index']);
