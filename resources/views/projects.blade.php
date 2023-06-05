@@ -74,12 +74,18 @@
                 <label for="subject_proj">Subject</label>
                 <input type="text" id="subject_proj" name="subject_proj" class="form-control" required>  
                 <label for="language_proj">Language</label>
-                <input type="text" id="language_proj" name="language_proj" class="form-control" required>  
+                <select id="language_proj" name="language_proj"" class="form-control" required>
+                    <option value="">Choose a Language</option>
+                    <option value="laravel">Laravel</option>
+                    <option value="codeigniter">CodeIgniter</option>
+                    <option value="corephp">Core PHP</option>
+                    <option value="react">React</option>
+                </select>
                 <label for="desc_proj">Description</label>
                 <input type="text" id="desc_proj" name="desc_proj" class="form-control" required>
                 <label for="status_proj">Status</label>
                 <select id="status_proj" name="status_proj" class="form-control" required>
-                    <option value=""></option>
+                    <option value="">Status</option>
                     <option value="1">Active</option>
                     <option value="0">Deactive</option>
                     <option value="2">Slow Down</option>
