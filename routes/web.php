@@ -24,7 +24,15 @@ Route::get('/works/{workID}',[DashboardController::class,'remainworks']);
 Route::post('/addtask/data',[DashboardController::class,'insertremainworks']);
 Route::post('/edittask/data',[DashboardController::class,'updateremainworks']);
 
+// Porjects
+Route::get('/projects',[DashboardController::class,'projectpage']);
+Route::post('/add/projectdata',[DashboardController::class,'insertproject']);
+Route::post('/edit/projectdata',[DashboardController::class,'updateproject']);
 
+// Project Details (Tasks)
+Route::get('/projects/{projectID}',[DashboardController::class,'projectdetails']);
+Route::post('/add/projectdetailsdata',[DashboardController::class,'insertprojectdetails']);
+Route::post('/edit/projectdetailsdata',[DashboardController::class,'updateprojectdetails']);
 
 // --------------------------------- Api
 // Works
@@ -34,3 +42,10 @@ Route::get('/api/Deletedata/{id_work}',[DashboardController::class,'deleteworkda
 //RemainWorks
 Route::get('/api/taskgetdata/{id_remain}',[DashboardController::class,'getremainworkdata']);
 Route::get('/api/taskDeletedata/{id_remain}',[DashboardController::class,'deleteremainwork']);
+
+// Projects 
+Route::get('/api/projectgetdata/{id_proj}',[DashboardController::class,'getprojectdata']);
+Route::get('/api/PorjectDeletedata/{id_proj}',[DashboardController::class,'deleteproject']);
+
+// Project Details
+Route::get('/api/projectdetailsgetdata/{id_detproj}',[DashboardController::class,'getprojectdetails']);

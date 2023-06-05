@@ -107,4 +107,79 @@ class DashboardController extends Controller
         $data= DB::table('remainwork')->where(['id_remain'=>$request->id_remain])->delete();
         return $data;
     }
+    // Project Show\
+    public function projectpage()
+    {
+        $projectdata=DB::table('projects')->get();
+        return view('projects',['projectdata'=>$projectdata]);
+    }
+    public function insertproject(request $request)
+    {
+        $data=[
+            'title_proj'=>$request->input('title_proj'),
+            'subject_proj'=>$request->input('subject_proj'),
+            'language_proj'=>$request->input('language_proj'),
+            'desc_proj'=>$request->input('desc_proj'),
+            'status_proj'=>$request->input('status_proj'),
+        ];
+        DB::table('projects')->insert($data);
+        return redirect('projects');
+    }
+    public function getprojectdata(request $request)
+    {
+        $data= DB::table('projects')->where(['id_proj'=>$request->id_proj])->get();
+        return $data;
+    }
+    public function updateproject(request $request)
+    {
+        $data=[
+            'id_proj'=>$request->input('id_proj'),
+            'title_proj'=>$request->input('title_proj'),
+            'subject_proj'=>$request->input('subject_proj'),
+            'language_proj'=>$request->input('language_proj'),
+            'desc_proj'=>$request->input('desc_proj'),
+            'status_proj'=>$request->input('status_proj'),
+        ];
+        DB:: table('projects')->where(['id_proj'=>$request->id_proj])->update($data);
+        return redirect('projects');
+    }
+    public function deleteproject(request $request)
+    {
+        $data = DB::table('projects')->where(['id_proj'=>$request->id_proj])->delete();
+        return $data;
+    }
+    public function projectdetails(request $request)
+    {
+        $projectdata= DB:: table('projects')->where(['projects.id_proj'=>$request->projectID])->get();
+        $projectdetailsdata= DB:: table('projectdetails')->get();
+        // return $projectdata;
+        return view('projectdetails',['projectdata'=>$projectdata, 'projectdetailsdata'=>$projectdetailsdata]);
+    }
+    public function insertprojectdetails(request $request)
+    {
+        $data=[
+            'id_proj'=>$request->input('id_proj'),
+            'tasks_detproj'=>$request->input('tasks_detproj'),
+            'status_detproj'=>$request->input('status_detproj'),
+        ];
+        DB::table('projectdetails')->insert($data);
+        return back();
+    }
+    public function getprojectdetails(request $request)
+    {
+        $data= DB:: table('projectdetails')->where(['id_detproj'=>$request->id_detproj])->get();
+        return $data;
+    }
+    public function updateprojectdetails(request $request)
+    {
+        $data=[
+            'id_detproj'=>$request->input('id_detproj'),
+            'id_proj'=>$request->input('id_proj'),
+            'tasks_detproj'=>$request->input('tasks_detproj'),
+            'status_detproj'=>$request->input('status_detproj'),
+        ];
+        DB::table('projectdetails')->where(['id_detproj'=>$request->id_detproj])->update($data);
+        return back();
+    }
+
 }
