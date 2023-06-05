@@ -107,7 +107,9 @@ class DashboardController extends Controller
         $data= DB::table('remainwork')->where(['id_remain'=>$request->id_remain])->delete();
         return $data;
     }
-    // Project Show\
+
+    
+    // Projects
     public function projectpage()
     {
         $projectdata=DB::table('projects')->get();
@@ -148,6 +150,8 @@ class DashboardController extends Controller
         $data = DB::table('projects')->where(['id_proj'=>$request->id_proj])->delete();
         return $data;
     }
+
+    // Project Details
     public function projectdetails(request $request)
     {
         $projectdata= DB:: table('projects')->where(['projects.id_proj'=>$request->projectID])->get();
