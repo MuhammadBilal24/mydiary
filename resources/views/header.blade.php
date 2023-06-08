@@ -57,6 +57,12 @@
                                 <span>Projects</span>
                             </a>
                         </li>
+                        <li class="sidebar-item">
+                            <a href="/accounts" class='sidebar-link'>
+                                <i class="bi bi-stack"></i>
+                                <span>Social Accounts</span>
+                            </a>
+                        </li>
                             <!-- <li class="sidebar-item">
                                 <a href="/users" class='sidebar-link'>
                                     <i class="bi bi-person-badge-fill"></i>

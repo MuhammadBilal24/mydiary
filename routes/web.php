@@ -34,6 +34,15 @@ Route::get('/projects/{projectID}',[DashboardController::class,'projectdetails']
 Route::post('/add/projectdetailsdata',[DashboardController::class,'insertprojectdetails']);
 Route::post('/edit/projectdetailsdata',[DashboardController::class,'updateprojectdetails']);
 
+// Social Accounts
+Route::get('/accounts',[DashboardController::class,'socialaccounts']);
+Route::post('/add/accountsdata',[DashboardController::class,'insertaccount']);
+Route::post('/edit/accountsdata',[DashboardController::class,'updatesocialaccounts']);
+
+
+
+
+
 // --------------------------------- Api
 // Works
 Route::get('/api/getdata/{id_work}',[DashboardController::class,'getworkdata']); 
@@ -49,3 +58,5 @@ Route::get('/api/PorjectDeletedata/{id_proj}',[DashboardController::class,'delet
 
 // Project Details
 Route::get('/api/projectdetailsgetdata/{id_detproj}',[DashboardController::class,'getprojectdetails']);
+
+Route::get('/api/accountgetdata/{id_sac}',[DashboardController::class,'getsocialaccountdata']);

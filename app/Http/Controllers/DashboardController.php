@@ -185,5 +185,40 @@ class DashboardController extends Controller
         DB::table('projectdetails')->where(['id_detproj'=>$request->id_detproj])->update($data);
         return back();
     }
+    public function socialaccounts()
+    {
+        $myaccountsdata = DB::table('socialaccounts')->get();
+        return view('accounts',['myaccountsdata'=>$myaccountsdata]);
+    }
+    public function insertaccount(request $request)
+    {
+        $data=[
+            'title_sac'=>$request->input('title_sac'),
+            'email_sac'=>$request->input('email_sac'),
+            'password_sac'=>$request->input('password_sac'),
+            'link_sac'=>$request->input('link_sac'),
+            'status_sac'=>$request->input('status_sac'),
+        ];
+        DB::table('socialaccounts')->insert($data);
+        return back();
+    }
+    public function getsocialaccountdata(request $request)
+    {
+        $data =DB::table('socialaccounts')->where(['id_sac'=>$request->id_sac])->get();
+        return $data;
+    }
+    public function updatesocialaccounts(request $request)
+    {
+        $data=[
+            'id_sac'=>$request->input('id_sac'),
+            'title_sac'=>$request->input('title_sac'),
+            'email_sac'=>$request->input('email_sac'),
+            'password_sac'=>$request->input('password_sac'),
+            'link_sac'=>$request->input('link_sac'),
+            'status_sac'=>$request->input('status_sac'),
+        ];
+        DB::table('socialaccounts')->where(['id_sac'=>$request->id_sac])->update($data);
+        return back();
+    } 
 
 }
