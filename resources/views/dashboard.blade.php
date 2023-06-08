@@ -148,56 +148,43 @@
                                     </div>
                                 </div>
                             </div>
-                        </div> --}}
-                        {{-- <div class="col-12 col-xl-8">
+                        </div> --}} -->
+                        <div class="col-12 col-xl-8">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4>Latest Comments</h4>
+                                    <h4>Notepad
+                                        <a href="/notepad"><button class="btn btn-primary" style="float:right">More</button></a>
+                                    </h4>
                                 </div>
                                 <div class="card-body">
                                     <div class="table-responsive">
                                         <table class="table table-hover table-lg">
                                             <thead>
                                                 <tr>
-                                                    <th>Name</th>
-                                                    <th>Comment</th>
+                                                    <th>Title</th>
+                                                    <th>Details</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <tr>
+                                                    @foreach($mynotepaddata as $value)
                                                     <td class="col-3">
                                                         <div class="d-flex align-items-center">
-                                                            <div class="avatar avatar-md">
-                                                                <img src="assets/images/faces/5.jpg">
-                                                            </div>
-                                                            <p class="font-bold ms-3 mb-0">Si Cantik</p>
+                                                            <p class="font-bold ms-3 mb-0">{{$value->title_note}}</p>
                                                         </div>
                                                     </td>
                                                     <td class="col-auto">
-                                                        <p class=" mb-0">Congratulations on your graduation!</p>
+                                                        <p class=" mb-0"><textarea readonly rows="1" cols="50">{{$value->details_note}}</textarea></p>
                                                     </td>
+                                                    @endforeach
                                                 </tr>
-                                                <tr>
-                                                    <td class="col-3">
-                                                        <div class="d-flex align-items-center">
-                                                            <div class="avatar avatar-md">
-                                                                <img src="assets/images/faces/2.jpg">
-                                                            </div>
-                                                            <p class="font-bold ms-3 mb-0">Si Ganteng</p>
-                                                        </div>
-                                                    </td>
-                                                    <td class="col-auto">
-                                                        <p class=" mb-0">Wow amazing design! Can you make another
-                                                            tutorial for
-                                                            this design?</p>
-                                                    </td>
-                                                </tr>
+                                               
                                             </tbody>
                                         </table>
                                     </div>
                                 </div>
                             </div>
-                        </div> --}} -->
+                        </div>
                     </div>
                 </div>
                 <div class="col-12 col-lg-3">

@@ -39,8 +39,10 @@ Route::get('/accounts',[DashboardController::class,'socialaccounts']);
 Route::post('/add/accountsdata',[DashboardController::class,'insertaccount']);
 Route::post('/edit/accountsdata',[DashboardController::class,'updatesocialaccounts']);
 
-
-
+// Notepad
+Route::get('/notepad',[DashboardController::class,'notepad']);
+Route::post('/add/notepaddata',[DashboardController::class,'insertnotepad']);
+Route::post('/edit/notepaddata',[DashboardController::class,'updatenotepad']);
 
 
 // --------------------------------- Api
@@ -59,4 +61,9 @@ Route::get('/api/PorjectDeletedata/{id_proj}',[DashboardController::class,'delet
 // Project Details
 Route::get('/api/projectdetailsgetdata/{id_detproj}',[DashboardController::class,'getprojectdetails']);
 
+// Social Accounts
 Route::get('/api/accountgetdata/{id_sac}',[DashboardController::class,'getsocialaccountdata']);
+
+// Notepad
+Route::get('/api/notepadgetdata/{id_note}',[DashboardController::class,'getnotepad']);
+Route::get('/api/notepadDeletedata/{id_note}',[DashboardController::class,'deletenotepad']);

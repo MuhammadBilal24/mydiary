@@ -14,8 +14,9 @@ class DashboardController extends Controller
     {
         $myworkdata = DB::table('myworks')->get();
         $remainworkdata = DB::table('remainwork')->get();
+        $mynotepaddata = DB::table('notepad')->get();
         // return $myworkdata;
-        return view('dashboard',  ['myworkdata' => $myworkdata,'remainworkdata'=>$remainworkdata]);
+        return view('dashboard',  ['myworkdata' => $myworkdata,'remainworkdata'=>$remainworkdata,'mynotepaddata'=>$mynotepaddata]);
     }
     public function getworks()
     {
@@ -220,5 +221,40 @@ class DashboardController extends Controller
         DB::table('socialaccounts')->where(['id_sac'=>$request->id_sac])->update($data);
         return back();
     } 
-
+    public function notepad()
+    {
+        $mynotepaddata= DB::table('notepad')->get();
+        return view('notepad',['mynotepaddata'=>$mynotepaddata]);
+    }
+    public function insertnotepad(request $request)
+    {
+        $data=[
+            'title_note'=>$request->input('title_note'),
+            'details_note'=>$request->input('details_note'),
+            'status_note'=>$request->input('status_note'),
+        ];
+        DB::table('notepad')->insert($data);
+        return redirect('/notepad');
+    }
+    public function getnotepad(request $request)
+    {
+        $data= DB::table('notepad')->where(['id_note'=>$request->id_note])->get();
+        return $data;
+    }
+    public function updatenotepad(request $request)
+    {
+        $data=[
+            'id_note'=>$request->input('id_note'),
+            'title_note'=>$request->input('title_note'),
+            'details_note'=>$request->input('details_note'),
+            'status_note'=>$request->input('status_note'),
+        ];
+        DB::table('notepad')->where(['id_note'=>$request->id_note])->update($data);
+        return back();
+    }
+    public function deletenotepad(request $request)
+    {
+        $data= DB::table('notepad')->where(['id_note'=>$request->id_note])->delete();
+        return $data;
+    }
 }

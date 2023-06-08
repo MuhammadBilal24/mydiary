@@ -29,7 +29,7 @@
                                 <td class="text-center">{{$value->email_sac}}</td>
                                 <td class="text-center"><a target="__blank" href="{{$value->link_sac}}">{{$value->link_sac}}</a></td>
                                 <td class="text-center">
-                                    <button type="button" onclick="getDatafromDB('{{$value->id_sac}}')" data-id="{{$value->id_sac}}" style="border:none" data-toggle="modal" data-target="#exampleModal2">
+                                    <button type="button" onclick="getDatafromDB('{{$value->id_sac}}')" data-id="{{$value->id_sac}}" style="background:none;border:none" data-toggle="modal" data-target="#exampleModal2">
                                     @if ($value->status_sac == '1')
                                         <span class="badge bg-success">Active</span>
                                         @elseif($value->status_sac == '2')
