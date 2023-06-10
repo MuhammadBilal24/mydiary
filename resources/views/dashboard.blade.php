@@ -234,7 +234,7 @@
                                     <!-- <img src="assets/images/faces/4.jpg"> -->
                                 </div>
                                 <div class="name ms-4" style="width:90%">
-                                    <a href="{{$value->link_sac}}">{{$value->link_sac}}</a>
+                                    <a href="{{$value->link_sac}}" target="_blank">{{$value->link_sac}}</a>
                                     <!-- <h5 class="mb-1">{{$value->link_sac}}</h5> -->
                                     <h6 class="text-muted mb-0" style="">@ {{$value->title_sac}}</h6>
                                 </div>
