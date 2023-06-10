@@ -20,8 +20,9 @@ class DashboardController extends Controller
         ->where(['remainwork.status_remain'=>'1'])
         ->get();
         $activeaccounts= DB::table('socialaccounts')->where(['status_sac'=>'1'])->get();
+        $activeprojects= DB::table('projects')->get();
         return view('dashboard',  ['myworkdata' => $myworkdata,'remainworkdata'=>$remainworkdata,'mynotepaddata'=>$mynotepaddata,
-                                        'workingtasks'=>$workingtasks,'activeaccounts'=>$activeaccounts]);
+                                        'workingtasks'=>$workingtasks,'activeaccounts'=>$activeaccounts, 'activeprojects'=>$activeprojects]);
     }
     public function getworks()
     {

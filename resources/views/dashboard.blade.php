@@ -166,18 +166,106 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
                                                     @foreach($mynotepaddata as $value)
+                                                <tr>
                                                     <td class="col-3">
                                                         <div class="d-flex align-items-center">
-                                                            <p class="font-bold ms-3 mb-0">{{$value->title_note}}</p>
+                                                            <p class="font-bold mb-0">{{$value->title_note}}</p>
                                                         </div>
                                                     </td>
                                                     <td class="col-auto">
                                                         <p class=" mb-0"><textarea readonly rows="1" cols="70">{{$value->details_note}}</textarea></p>
                                                     </td>
-                                                    @endforeach
                                                 </tr>
+                                                    @endforeach
+                                               
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-xl-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4>Active Projects
+                                        <a href="/projects"><button class="btn btn-primary" style="float:right">More</button></a>
+                                    </h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-hover table-lg">
+                                            <thead>
+                                                <tr>
+                                                    <th>Title</th>
+                                                    <th class="text-center">Status</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    @foreach($activeprojects as $value)
+                                                    <tr>
+                                                    <td class="col-4">
+                                                        <div class="d-flex align-items-center">
+                                                            <p class="font-bold  mb-0">{{$value->title_proj}}</p>
+                                                        </div>
+                                                    </td>
+                                                    <td class="col-auto">
+                                                        <p class=" mb-0 text-center">
+                                                            @if ($value->status_proj == '1')
+                                                                <span class="badge bg-success">Active</span>
+                                                            @elseif($value->status_proj == '2')
+                                                                <span class="badge bg-info">Slow Down</span>                                
+                                                            @else
+                                                                <span class="badge bg-danger">Deactive</span>                                
+                                                            @endif
+                                                        </p>
+                                                    </td>
+                                                    </tr>
+                                                    @endforeach
+                                               
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-xl-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4>My Works
+                                        <a href="/works"><button class="btn btn-primary" style="float:right">More</button></a>
+                                    </h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-hover table-lg">
+                                            <thead>
+                                                <tr>
+                                                    <th>Title</th>
+                                                    <th class="text-center">Status</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                
+                                                    @foreach($myworkdata as $value)
+                                                    <tr>
+                                                    <td class="col-4">
+                                                        <div class="d-flex align-items-center">
+                                                            <p class="font-bold mb-0">{{$value->title}}</p>
+                                                        </div>
+                                                    </td>
+                                                    <td class="col-auto">
+                                                        <p class=" mb-0 text-center">@if ($value->status == '1')
+                                                                <span class="badge bg-success">Active</span>
+                                                            @elseif($value->status == '2')
+                                                                <span class="badge bg-info">Slow Down</span>                                
+                                                            @else
+                                                                <span class="badge bg-danger">Deactive</span>                                
+                                                            @endif</p>
+                                                    </td>
+                                                    </tr>
+                                                    @endforeach
+                                                
                                                
                                             </tbody>
                                         </table>
@@ -192,7 +280,7 @@
                         <div class="card-body py-4 px-5">
                             <div class="d-flex align-items-center">
                                 <div class="avatar avatar-xl">
-                                    <img src="assets/images/faces/1.jpg" alt="Face 1">
+                                    <img src="{{asset('assets/images/fvcon.png')}}" alt="Face 1">
                                 </div>
                                 <div class="ms-3 name">
                                     <h5 class="font-bold">Bilael</h5>

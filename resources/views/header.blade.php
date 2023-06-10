@@ -35,7 +35,7 @@
                     </div>
                 </div>
                 <div class="sidebar-menu">
-                    <ul class="menu">
+                    <ul class="menu" >
                     <!-- <li class="sidebar-title">Menu</li> -->
 
                         <li class="sidebar-item active ">
@@ -422,11 +422,13 @@
         </div>
 
         <div id="main" class='layout-navbar'>
+        <!-- style="background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);"
+           background: linear-gradient(to left, #0099ff 0%, #ff99cc 70%); -->
             <header class='mb-3'>
-                <nav class="navbar navbar-expand navbar-light " style="background-color: white">
+                <nav class="navbar navbar-expand navbar-light " style="background: linear-gradient(to top left, #435ebe 0%, #435ebe 70%);">
                     <div class="container-fluid">
                         <a href="#" class="burger-btn d-block">
-                            <i class="bi bi-justify fs-3"></i>
+                            <i class="bi bi-justify fs-3" style="color:white"></i>
                         </a>
                         {{-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                             data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -464,8 +466,8 @@
                                 <a href="#" data-bs-toggle="dropdown" aria-expanded="false">
                                     <div class="user-menu d-flex">
                                         <div class="user-name text-end me-3">
-                                            <h6 class="mb-0 ">USER</h6>
-                                            <p class="mb-0 text-sm text-gray-600" >Admin Panel</p>
+                                            <h6 class="mb-0 " style="color:white">USER</h6>
+                                            <p class="mb-0 text-sm "style="color:white">Admin Panel</p>
                                         </div>
                                         <div class="user-img d-flex align-items-center">
                                             <div class="avatar avatar-md">
