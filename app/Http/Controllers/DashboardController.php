@@ -15,8 +15,13 @@ class DashboardController extends Controller
         $myworkdata = DB::table('myworks')->get();
         $remainworkdata = DB::table('remainwork')->get();
         $mynotepaddata = DB::table('notepad')->get();
-        // return $myworkdata;
-        return view('dashboard',  ['myworkdata' => $myworkdata,'remainworkdata'=>$remainworkdata,'mynotepaddata'=>$mynotepaddata]);
+        $workingtasks = DB:: table('remainwork')
+        ->join('myworks', 'myworks.id_work', '=', 'remainwork.id_work')
+        ->where(['remainwork.status_remain'=>'1'])
+        ->get();
+        $activeaccounts= DB::table('socialaccounts')->where(['status_sac'=>'1'])->get();
+        return view('dashboard',  ['myworkdata' => $myworkdata,'remainworkdata'=>$remainworkdata,'mynotepaddata'=>$mynotepaddata,
+                                        'workingtasks'=>$workingtasks,'activeaccounts'=>$activeaccounts]);
     }
     public function getworks()
     {

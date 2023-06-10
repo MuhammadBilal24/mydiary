@@ -149,7 +149,7 @@
                                 </div>
                             </div>
                         </div> --}} -->
-                        <div class="col-12 col-xl-8">
+                        <div class="col-12 col-xl-12">
                             <div class="card">
                                 <div class="card-header">
                                     <h4>Notepad
@@ -174,7 +174,7 @@
                                                         </div>
                                                     </td>
                                                     <td class="col-auto">
-                                                        <p class=" mb-0"><textarea readonly rows="1" cols="50">{{$value->details_note}}</textarea></p>
+                                                        <p class=" mb-0"><textarea readonly rows="1" cols="70">{{$value->details_note}}</textarea></p>
                                                     </td>
                                                     @endforeach
                                                 </tr>
@@ -201,44 +201,50 @@
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="card">
+                    <div class="card">
                         <div class="card-header">
-                            <h4>Recent Messages</h4>
+                            <h4>Working Tasks</h4>
                         </div>
                         <div class="card-content pb-4">
+                            @foreach($workingtasks as $value)
                             <div class="recent-message d-flex px-4 py-3">
                                 <div class="avatar avatar-lg">
-                                    <img src="assets/images/faces/4.jpg">
+                                    <!-- <img src="assets/images/faces/4.jpg"> -->
                                 </div>
                                 <div class="name ms-4">
-                                    <h5 class="mb-1">Hank Schrader</h5>
-                                    <h6 class="text-muted mb-0">@johnducky</h6>
+                                    <h5 class="mb-1">{{$value->task}}</h5>
+                                    <h6 class="text-muted mb-0">@ {{$value->title}}</h6>
                                 </div>
                             </div>
-                            <div class="recent-message d-flex px-4 py-3">
-                                <div class="avatar avatar-lg">
-                                    <img src="assets/images/faces/5.jpg">
-                                </div>
-                                <div class="name ms-4">
-                                    <h5 class="mb-1">Dean Winchester</h5>
-                                    <h6 class="text-muted mb-0">@imdean</h6>
-                                </div>
-                            </div>
-                            <div class="recent-message d-flex px-4 py-3">
-                                <div class="avatar avatar-lg">
-                                    <img src="assets/images/faces/1.jpg">
-                                </div>
-                                <div class="name ms-4">
-                                    <h5 class="mb-1">John Dodol</h5>
-                                    <h6 class="text-muted mb-0">@dodoljohn</h6>
-                                </div>
-                            </div>
+                            @endforeach
                             <div class="px-4">
-                                <button class='btn btn-block btn-xl btn-light-primary font-bold mt-3'>Start
-                                    Conversation</button>
+                                <a href="/works"><button class='btn btn-block btn-xl btn-light-primary font-bold mt-3'>My Works</button></a>
                             </div>
                         </div>
-                    </div> -->
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>Active Social Accounts</h4>
+                            <!-- <button style="background-color:#ff7976;border:none">Social Accounts</button> -->
+                        </div>
+                        <div class="card-content pb-4">
+                            @foreach($activeaccounts as $value)
+                            <div class="recent-message d-flex px-4 py-3">
+                                <div class="avatar avatar-lg">
+                                    <!-- <img src="assets/images/faces/4.jpg"> -->
+                                </div>
+                                <div class="name ms-4" style="width:90%">
+                                    <a href="{{$value->link_sac}}">{{$value->link_sac}}</a>
+                                    <!-- <h5 class="mb-1">{{$value->link_sac}}</h5> -->
+                                    <h6 class="text-muted mb-0" style="">@ {{$value->title_sac}}</h6>
+                                </div>
+                            </div>
+                            @endforeach
+                            <div class="px-4">
+                                <a href="/accounts"><button class='btn btn-block btn-xl btn-light-primary font-bold mt-3'>Accounts</button></a>
+                            </div>
+                        </div>
+                    </div>
                     <!-- {{-- <div class="card">
                         <div class="card-header">
                             <h4>Visitors Profile</h4>
