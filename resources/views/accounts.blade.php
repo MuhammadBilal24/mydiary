@@ -31,11 +31,11 @@
                                 <td class="text-center">
                                     <button type="button" onclick="getDatafromDB('{{$value->id_sac}}')" data-id="{{$value->id_sac}}" style="background:none;border:none" data-toggle="modal" data-target="#exampleModal2">
                                     @if ($value->status_sac == '1')
-                                        <span class="badge bg-success">Active</span>
+                                        <span class="badge bg-primary">Active</span>
                                         @elseif($value->status_sac == '2')
-                                        <span class="badge bg-info">Slow Down</span>                                
+                                        <span class="badge bg-warning">Slow Down</span>                                
                                         @elseif($value->status_sac == '3')
-                                        <span class="badge bg-info">Updated</span>                                
+                                        <span class="badge bg-success">Updated</span>                                
                                     @else
                                         <span class="badge bg-danger">Deactive</span>                                
                                     @endif
@@ -78,8 +78,9 @@
                 <select id="status_sac" name="status_sac" class="form-control" required>
                     <option value=""></option>
                     <option value="1">Active</option>
-                    <option value="0">Deactive</option>
                     <option value="2">Slow Down</option>
+                    <option value="3">Updated</option>
+                    <option value="0">Deactive</option>
                 </select>
                 <br>
                 <div class="modal-footer">
@@ -118,6 +119,7 @@
                     <option value="">Choose</option>
                     <option value="1">Active</option>
                     <option value="2">Slow Down</option>
+                    <option value="3">Updated</option>
                     <option value="0">Deactive</option>
                 </select>
                 <br>

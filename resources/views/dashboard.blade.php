@@ -302,7 +302,7 @@
                     </div>
                     <div class="card">
                         <div class="card-header">
-                            <h4>Active Social Accounts</h4>
+                            <h4>Updated Accounts</h4>
                             <!-- <button style="background-color:#ff7976;border:none">Social Accounts</button> -->
                         </div>
                         <div class="card-content pb-4">
