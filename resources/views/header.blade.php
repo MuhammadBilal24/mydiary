@@ -466,7 +466,7 @@
                                 <a href="#" data-bs-toggle="dropdown" aria-expanded="false">
                                     <div class="user-menu d-flex">
                                         <div class="user-name text-end me-3">
-                                            <h6 class="mb-0 " style="color:white">USER</h6>
+                                            <h6 class="mb-0 " style="color:white">User</h6>
                                             <p class="mb-0 text-sm "style="color:white">Admin Panel</p>
                                         </div>
                                         <div class="user-img d-flex align-items-center">
@@ -489,7 +489,7 @@
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
-                                    <li><a class="dropdown-item" href="/login"><i
+                                    <li><a class="dropdown-item" href="/logout"><i
                                                 class="icon-mid bi bi-box-arrow-left me-2"></i> Logout</a></li>
                                 </ul>
                             </div>

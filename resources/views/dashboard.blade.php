@@ -198,7 +198,7 @@
                                             <thead>
                                                 <tr>
                                                     <th>Title</th>
-                                                    <th class="text-center">Status</th>
+                                                    <th class="text-center">Language</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -209,17 +209,7 @@
                                                             <p class="font-bold  mb-0">{{$value->title_proj}}</p>
                                                         </div>
                                                     </td>
-                                                    <td class="col-auto">
-                                                        <p class=" mb-0 text-center">
-                                                            @if ($value->status_proj == '1')
-                                                                <span class="badge bg-success">Active</span>
-                                                            @elseif($value->status_proj == '2')
-                                                                <span class="badge bg-info">Slow Down</span>                                
-                                                            @else
-                                                                <span class="badge bg-danger">Deactive</span>                                
-                                                            @endif
-                                                        </p>
-                                                    </td>
+                                                    <td class="col-auto text-center">{{$value->language_proj}} Project</td>
                                                     </tr>
                                                     @endforeach
                                                
@@ -283,7 +273,7 @@
                                     <img src="{{asset('assets/images/fvcon.png')}}" alt="Face 1">
                                 </div>
                                 <div class="ms-3 name">
-                                    <h5 class="font-bold">Bilael</h5>
+                                    <h5 class="font-bold">{{$data->name}}</h5>
                                     <h6 class="text-muted mb-0">@BilaelDevelops</h6>
                                 </div>
                             </div>
