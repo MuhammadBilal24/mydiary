@@ -263,4 +263,9 @@ class DashboardController extends Controller
         $data= DB::table('notepad')->where(['id_note'=>$request->id_note])->delete();
         return $data;
     }
+    public function users()
+    {
+        $usersdata=DB::table('users')->get();
+        return view('users',['usersdata'=>$usersdata]);
+    }
 }

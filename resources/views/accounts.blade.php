@@ -10,7 +10,7 @@
                     </button></h4>
                 </div>
                 <div class="card-body">
-                    <table class="table table-striped" id="table1">
+                    <table class="table table-striped" id="">
                         <thead>
                             <tr>
                                 <th>ID</th>

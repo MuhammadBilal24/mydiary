@@ -59,7 +59,7 @@
                         </li>
                         <li class="sidebar-item">
                             <a href="/accounts" class='sidebar-link'>
-                                <i class="bi bi-person-badge-fill"></i>
+                                <i class="bi bi-grid-1x2-fill"></i>
                                 <span>Social Accounts</span>
                             </a>
                         </li>
@@ -67,6 +67,12 @@
                             <a href="/notepad" class='sidebar-link'>
                                 <i class="bi bi-file-earmark-spreadsheet-fill"></i>
                                 <span>Notepad</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="/users" class='sidebar-link'>
+                                <i class="bi bi-person-badge-fill"></i>
+                                <span>Users</span>
                             </a>
                         </li>
                             <!-- <li class="sidebar-item">

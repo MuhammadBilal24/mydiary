@@ -26,6 +26,7 @@
             <!-- <p class="auth-subtitle mb-5">Input your data to register to our website.</p> -->
 
             <form action="/register/newuser/" method="post">
+            <div class="" style="color:red">Oops, Admin Stops New Registerations</div>
                 @if(Session::has('success'))
                 <div class="alert alert-success">{{Session::get('success')}}</div>
                 @endif
@@ -35,21 +36,21 @@
                 @csrf
                 <br>
                 <div class="form-group position-relative has-icon-left mb-4">
-                    <input type="text" class="form-control form-control-xl" placeholder="Username" id="name" name="name">
+                    <input type="text" class="form-control form-control-xl" placeholder="Username" readonly id="name" name="name" >
                     <div class="form-control-icon">
                         <i class="bi bi-person"></i>
                     </div>
                     <span class="text-danger">@error('name'){{$message}}@enderror</span>
                 </div>
                 <div class="form-group position-relative has-icon-left mb-4">
-                    <input type="text" class="form-control form-control-xl" placeholder="Email" id="email" name="email">
+                    <input type="text" class="form-control form-control-xl" placeholder="Email" readonly id="email" name="email">
                     <div class="form-control-icon">
                         <i class="bi bi-envelope"></i>
                     </div>
                     <span class="text-danger">@error('email'){{$message}}@enderror</span>
                 </div>
                 <div class="form-group position-relative has-icon-left mb-4">
-                    <input type="password" class="form-control form-control-xl" placeholder="Password" id="password" name="password">
+                    <input type="password" class="form-control form-control-xl" placeholder="Password" readonly id="password" name="password">
                     <div class="form-control-icon">
                         <i class="bi bi-shield-lock"></i>
                     </div>

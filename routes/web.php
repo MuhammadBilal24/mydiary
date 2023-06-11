@@ -56,6 +56,8 @@ Route::get('/notepad',[DashboardController::class,'notepad'])->middleware('isLog
 Route::post('/add/notepaddata',[DashboardController::class,'insertnotepad']);
 Route::post('/edit/notepaddata',[DashboardController::class,'updatenotepad']);
 
+// Users
+Route::get('/users',[DashboardController::class,'users']);
 
 // --------------------------------- Api
 // Works
