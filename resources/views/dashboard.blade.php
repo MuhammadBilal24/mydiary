@@ -149,7 +149,7 @@
                                 </div>
                             </div>
                         </div> --}} -->
-                        <div class="col-12 col-xl-12">
+                        <!-- <div class="col-12 col-xl-12">
                             <div class="card">
                                 <div class="card-header">
                                     <h4>Notepad
@@ -183,6 +183,32 @@
                                         </table>
                                     </div>
                                 </div>
+                            </div>
+                        </div> -->
+                        <div class="col-12 col-xl-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4>Notice Board
+                                    <button class="btn btn-success" id="updated" style=" float:right">Updated</button>
+                                    </h4>
+                                </div>
+                                <form action="/edit/notepaddata" method="POST" id="notice">
+                                @csrf
+                                <div class="card-body">
+                                @foreach($noticeboard as $value)
+                                    <div class="" style="margin-top:-30px">
+                                    <input type="hidden" name="id_note" id="id_note" value="{{$value->id_note}}" >
+                                    <input type="hidden" name="title_note" id="title_note" value="{{$value->title_note}}" >
+                                    <input type="hidden" name="status_note" id="status_note" value="{{$value->status_note}}" >
+                                    <textarea class="form-control" style="color:black" id="details_note" name="details_note" class="form-control" value="" rows="3">{{$value->details_note}}</textarea>
+                                            <!-- <input type="text"  id="details_note" name="details_note" class="form-control" value="{{$value->details_note}}"> -->
+                                    </div>
+                                @endforeach
+                                    <br>
+                                    <button class="btn btn-primary" type="submit" id="updatebtn" style="float:right">Update</button>
+                                    <br>
+                                </div>
+                               </form>
                             </div>
                         </div>
                         <div class="col-12 col-xl-6">
@@ -312,9 +338,9 @@
                                     <!-- <img src="assets/images/faces/4.jpg"> -->
                                 </div>
                                 <div class="name ms-4" style="width:90%">
-                                    <a href="{{$value->link_sac}}" target="_blank">{{$value->link_sac}}</a>
+                                    <a href="{{$value->link_sac}}" target="_blank"><span style="color:black">{{$loop->iteration}}- </span>  {{$value->title_sac}}</a>
                                     <!-- <h5 class="mb-1">{{$value->link_sac}}</h5> -->
-                                    <h6 class="text-muted mb-0" style="">@ {{$value->title_sac}}</h6>
+                                    <!-- <h6 class="text-muted mb-0" style=""></h6> -->
                                 </div>
                             </div>
                             @endforeach
@@ -335,3 +361,17 @@
             </section>
         </div>
 @include('footer')
+<script>
+    $(document).ready(function () { 
+        $("#updated").hide();
+        $("#updatbtn").show();
+
+    });
+    $('#notice').submit(function()
+    {
+        $("#updated").show();
+        $("#updatebtn").hide();
+        
+    }
+    )
+</script>

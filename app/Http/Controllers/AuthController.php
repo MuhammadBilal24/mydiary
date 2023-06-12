@@ -77,6 +77,7 @@ class AuthController extends Controller
         $myworkdata = DB::table('myworks')->get();
         $remainworkdata = DB::table('remainwork')->get();
         $mynotepaddata = DB::table('notepad')->get();
+        $noticeboard = DB::table('notepad')->where(['id_note'=>'1'])->get();
         $workingtasks = DB:: table('remainwork')
         ->join('myworks', 'myworks.id_work', '=', 'remainwork.id_work')
         ->where(['remainwork.status_remain'=>'1'])
@@ -84,7 +85,8 @@ class AuthController extends Controller
         $activeaccounts= DB::table('socialaccounts')->where(['status_sac'=>'3'])->get();
         $activeprojects= DB::table('projects')->where(['status_proj'=>'1'])->get();
         return view('dashboard',  ['myworkdata' => $myworkdata,'remainworkdata'=>$remainworkdata,'mynotepaddata'=>$mynotepaddata,
-                                        'workingtasks'=>$workingtasks,'activeaccounts'=>$activeaccounts, 'activeprojects'=>$activeprojects, 'data'=>$data]);
+                                        'workingtasks'=>$workingtasks,'activeaccounts'=>$activeaccounts, 'activeprojects'=>$activeprojects, 'data'=>$data
+                                            ,'noticeboard'=>$noticeboard]);
     }
     public function logoutuser()
     {

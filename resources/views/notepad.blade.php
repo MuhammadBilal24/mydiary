@@ -1,3 +1,4 @@
+<title>Notepad - Personal Task Manger </title>
 @include('header')
 <div id="main-content"> 
     <div class="page-heading">

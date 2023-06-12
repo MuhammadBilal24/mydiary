@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - NoteDiary </title>
+    <title>Dashboard - Personal Task Manger </title>
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
@@ -48,7 +48,7 @@
                         <li class="sidebar-item">
                             <a href="/works" class='sidebar-link'>
                                 <i class="i bi-collection-fill"></i>
-                                <span>My Works</span>
+                                <span>Tasks</span>
                             </a>
                         </li>
                         <li class="sidebar-item">

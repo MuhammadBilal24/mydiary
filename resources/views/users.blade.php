@@ -1,3 +1,5 @@
+<title>Users - Personal Task Manger </title>
+
 @include('header')
 <div id="main-content"> 
     <div class="page-heading">
@@ -5,9 +7,9 @@
             <div class="card">
                 <div class="card-header" style=" color:black">   
                      <h4>Users                                      
-                    <!-- <button type="button" style="float:right" class="btn btn-primary"data-toggle="modal" data-target="#exampleModal">
+                    <button type="button" style="float:right" class="btn btn-primary"data-toggle="modal" data-target="#exampleModal">
                         +Add
-                    </button> -->
+                    </button>
                   </h4>
                 </div>
                 <div class="card-body">
